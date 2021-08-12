@@ -12,7 +12,7 @@ export default function CharactersStatsGrid(props) {
             <div className="alert alert-primary" role="alert">
                 Displaying {filteredData.length} records!
             </div>
-            <table className="table">
+            <table className="table table-striped">
                 <thead>
                     <tr>
                         {

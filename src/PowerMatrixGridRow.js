@@ -1,4 +1,5 @@
 import columns from "./PowerMatrixColumns.json";
+import PowerGridFormattedCell from "./PowerGridFormattedCell";
 
 export default function PowerMatrixGridRow(props) {
     const { row } = props
@@ -10,7 +11,11 @@ export default function PowerMatrixGridRow(props) {
                         <td
                             key={`row:${row.ID}-cell:${columnsName}`}
                         >
-                            {row[columnsName]}
+                            {
+                                columnsName === "Name" ?
+                                    row[columnsName] :
+                                    <PowerGridFormattedCell data={row[columnsName]} />
+                            }
                         </td>
                     )
                 })

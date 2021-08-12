@@ -14,6 +14,7 @@ import CharactersPage from "./CharactersPage";
 import CharactersToComicsPage from "./CharactersToComicsPage";
 import CharactersStatsPage from "./CharactersStatsPage";
 import ComicsPage from "./ComicsPage";
+import "./App.css";
 
 function App() {
   return (

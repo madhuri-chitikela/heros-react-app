@@ -14,7 +14,7 @@ export default function HerosGrid(props) {
                 Displaying {filteredData.length} records!
             </div>
 
-            <table className="table">
+            <table className="table table-striped">
                 <thead>
                     <tr>
                         {
