@@ -4,7 +4,7 @@ import PowerMatrixGridRow from "./PowerMatrixGridRow";
 export default function PowerMatrixGrid(props) {
     const { data } = props
     const filteredData = [...data]
-    if (filteredData.length > 10 {
+    if (filteredData.length > 10) {
         filteredData.length = 10;
     }
     return (
