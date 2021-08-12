@@ -4,8 +4,8 @@ import HerosGridRow from "./HerosGridRow";
 export default function HerosGrid(props) {
     const { data } = props
     const filteredData = [...data]
-    if (filteredData.length > 100) {
-        filteredData.length = 100;
+    if (filteredData.length > 10) {
+        filteredData.length = 10;
     }
 
     return (

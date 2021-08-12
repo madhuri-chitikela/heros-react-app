@@ -4,8 +4,8 @@ import ComicsGridRow from "./ComicsGridRow";
 export default function ComicsGrid(props) {
     const { data } = props
     const filteredData = [...data]
-    if (filteredData.length > 100) {
-        filteredData.length = 100;
+    if (filteredData.length > 10) {
+        filteredData.length = 10;
     }
 
     return (
