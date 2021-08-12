@@ -1,24 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css'
+import Header from "./Header";
+import HomePage from "./HomePage";
+import MarvelCharactersPage from "./MarvelCharactersPage";
+import MarvelDCPage from "./MarvelDCPage";
+import PowerMatrixPage from "./PowerMatrixPage";
+import CharactersPage from "./CharactersPage";
+import CharactersToComicsPage from "./CharactersToComicsPage";
+import CharactersStatsPage from "./CharactersStatsPage";
+import ComicsPage from "./ComicsPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <div className="container-fluid">
+          <Switch>
+            <Route path="/marvel">
+              <MarvelCharactersPage />
+            </Route>
+            <Route path="/marvel-dc">
+              <MarvelDCPage />
+            </Route>
+            <Route path="/power-matrix">
+              <PowerMatrixPage />
+            </Route>
+            <Route path="/characters">
+              <CharactersPage />
+            </Route>
+            <Route path="/characters-to-comics">
+              <CharactersToComicsPage />
+            </Route>
+            <Route path="/characters-stats">
+              <CharactersStatsPage />
+            </Route>
+            <Route path="/comics">
+              <ComicsPage />
+            </Route>
+            <Route path="/">
+              <HomePage />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router >
+
   );
 }
 
