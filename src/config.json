@@ -1,3 +1,4 @@
 {
-    "dataHostName": "https://madhuri-chitikela.github.io/marvel-dc-dataset"
+    "dataHostName-bak": "https://madhuri-chitikela.github.io/marvel-dc-dataset",
+    "dataHostName": "http://localhost:5000"
 }

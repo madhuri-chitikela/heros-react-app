@@ -1,0 +1,15 @@
+.hero-grid{
+    font-size: 12px;
+}
+.hero-grid-column-id {
+    min-width: 75px;
+    max-width: 75px;
+}
+.hero-grid-column-name {
+    min-width: 270px;
+    max-width: 270px;
+}
+.hero-grid-column-publisher {
+    min-width: 200px;
+    max-width: 200px;
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import config from "./config.json"
 import csv from "csvtojson"
-import HerosGrid from "./HerosGrid"
+import HerosGrid from "./HerosGrid/HerosGrid"
 
 export default function MarvelCharactersPage(props) {
   const [data, setData] = useState([])
@@ -20,7 +20,7 @@ export default function MarvelCharactersPage(props) {
   return (
     <div>
       <div>
-        <h1>MarvelCharactersPage</h1>
+        <h3>MarvelCharactersPage</h3>
       </div>
       <HerosGrid
         data={data} />

@@ -1,7 +1,7 @@
 import columns from "./HerosColumns.json";
-import AlignmentCellFormatter from "./heroGridCellFormatters/AlignmentCellFormatter";
-import GenderCellFormatter from "./heroGridCellFormatters/GenderCellFormatter";
-import ColorCellFormatter from "./heroGridCellFormatters/ColorCellFormatter";
+import AlignmentCellFormatter from "../gridCellFormatters/AlignmentCellFormatter";
+import GenderCellFormatter from "../gridCellFormatters/GenderCellFormatter";
+import ColorCellFormatter from "../gridCellFormatters/ColorCellFormatter";
 
 export default function HerosGridRow(props) {
     const { row } = props
@@ -29,7 +29,8 @@ export default function HerosGridRow(props) {
 
                     return (
                         <td
-                            key={`row:${row.ID}-cell:${columnName}`}
+                            key={`row-${row.ID}-cell-${columnName}`}
+                            className={`hero-grid-column-${columnName.toLowerCase()}`}
                         >
                             {content}
                         </td>
