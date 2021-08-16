@@ -1,23 +1,38 @@
+import { useState } from "react";
 import columns from "./HerosColumns.json"
 import HerosGridRow from "./HerosGridRow";
 import HerosGridPagination from "./HerosGridPagination";
 import './HerosGrid.css'
 
+
 export default function HerosGrid(props) {
     const { data } = props
     const recordsPerPage = 10
+    const [currentPageNo, setCurrentPageNo] = useState(1)
 
-    const filteredData = [...data]
-    if (filteredData.length > recordsPerPage) {
-        filteredData.length = recordsPerPage;
+    const handlePageClick = (pageNo) => {
+        setCurrentPageNo(pageNo)
     }
 
-
+    const startIndex = (currentPageNo - 1) * recordsPerPage
+    const endIndex = startIndex + recordsPerPage - 1
+    const filteredData = data.slice(startIndex, endIndex + 1)
 
     return (
         <div>
             <div className="alert alert-primary p-1" role="alert">
-                Displaying {filteredData.length} / {data.length} records!
+                <b>Page: {currentPageNo}</b>
+                {': '}
+                <i>
+                    {startIndex + 1}
+                    {'-'}
+                    {endIndex + 1}
+                    {' '}
+
+                    of
+                    {' '}
+                    {data.length} records!
+                </i>
             </div>
 
             <div className="w-100 overflow-auto">
@@ -43,10 +58,11 @@ export default function HerosGrid(props) {
                     </thead>
                     <tbody>
                         {
-                            filteredData.map(row => {
+                            filteredData.map((row, idx) => {
                                 return (
                                     <HerosGridRow
                                         row={row}
+                                        sNo={idx + 1}
                                     />
                                 )
                             })
@@ -58,6 +74,8 @@ export default function HerosGrid(props) {
             <HerosGridPagination
                 recordsPerPage={recordsPerPage}
                 totalRecords={data.length}
+                currentPageNo={currentPageNo}
+                handlePageClick={handlePageClick}
             />
         </div>
     )
