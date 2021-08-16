@@ -1,7 +1,7 @@
 import columns from "./HerosColumns.json";
-import AlignmentCellFormatter from "./heroGridCellFormatters/AlignmentCellFormatter";
-import GenderCellFormatter from "./heroGridCellFormatters/GenderCellFormatter";
-import ColorCellFormatter from "./heroGridCellFormatters/ColorCellFormatter";
+import AlignmentCellFormatter from "../heroGridCellFormatters/AlignmentCellFormatter";
+import GenderCellFormatter from "../heroGridCellFormatters/GenderCellFormatter";
+import ColorCellFormatter from "../heroGridCellFormatters/ColorCellFormatter";
 
 export default function HerosGridRow(props) {
     const { row } = props

@@ -1,0 +1,23 @@
+.heros-grid{
+    font-size: 12px;
+}
+.heros-grid-column-id{
+    min-width: 75px;
+    max-width: 75px;
+}
+.heros-grid-column-Name{
+    min-width: 270px;
+    max-width: 270px;
+}
+.heros-grid-column-Alignment{
+    min-width: 100px;
+    max-width: 100px;
+}
+.heros-grid-column-Race{
+    min-width: 170px;
+    max-width: 170px;
+}
+.heros-grid-column-Publisher{
+    min-width: 200px;
+    max-width: 200px;
+}

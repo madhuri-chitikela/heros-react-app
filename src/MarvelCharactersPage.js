@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import config from "./config.json"
 import csv from "csvtojson"
-import HerosGrid from "./HerosGrid"
+import HerosGrid from "./HerosGrids/HerosGrid"
 
 export default function MarvelCharactersPage(props) {
   const [data, setData] = useState([])
