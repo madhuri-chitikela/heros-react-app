@@ -8,19 +8,33 @@ export default function HerosGridPagination(props) {
     } = props
     const totalPages = Math.floor(totalRecords / recordsPerPage) + 1
     const pageLinks = []
-    for (let i = 1; i <= totalPages; i++) {
+
+    let startPageNo = currentPageNo - (currentPageNo % recordsPerPage) + 1
+    if (currentPageNo % recordsPerPage === 0) {
+        startPageNo = currentPageNo - recordsPerPage + 1
+    }
+    let endPageNo = startPageNo + recordsPerPage - 1
+    for (let i = startPageNo; i <= endPageNo; i++) {
         pageLinks.push({
             pageNumber: i,
-            label: `${(i * recordsPerPage)} to ${i * recordsPerPage}`
+            label: `${((i - 1) * recordsPerPage + 1)} to ${i * recordsPerPage}`
         })
     }
     return (
         <ul className="list-inline pagination-sm">
-            {/* <li className="list-inline-item">
-                <button className="btn btn-link btn-sm">
+            <li className="list-inline-item">
+                <button
+                    className="btn btn-link btn-sm"
+                    disabled={currentPageNo <= 1}
+                    onClick={
+                        () => {
+                            handlePageClick(currentPageNo - 1)
+                        }
+                    }
+                >
                     <span aria-hidden="true">&laquo;</span>
                 </button>
-            </li> */}
+            </li>
             {
                 pageLinks.map(e => {
                     let className = "btn btn-link btn-sm"
@@ -45,12 +59,20 @@ export default function HerosGridPagination(props) {
                     )
                 })
             }
-            {/* 
+
             <li className="list-inline-item">
-                <button className="btn btn-link btn-sm">
+                <button
+                    className="btn btn-link btn-sm"
+                    disabled={currentPageNo >= totalPages}
+                    onClick={
+                        () => {
+                            handlePageClick(currentPageNo + 1)
+                        }
+                    }
+                >
                     <span aria-hidden="true">&raquo;</span>
                 </button>
-            </li> */}
+            </li>
         </ul>
     )
 }

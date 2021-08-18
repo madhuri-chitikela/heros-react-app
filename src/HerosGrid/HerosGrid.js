@@ -8,7 +8,7 @@ import './HerosGrid.css'
 export default function HerosGrid(props) {
     const { data } = props
     const recordsPerPage = 10
-    const [currentPageNo, setCurrentPageNo] = useState(1)
+    const [currentPageNo, setCurrentPageNo] = useState(11)
 
     const handlePageClick = (pageNo) => {
         setCurrentPageNo(pageNo)
@@ -62,7 +62,7 @@ export default function HerosGrid(props) {
                                 return (
                                     <HerosGridRow
                                         row={row}
-                                        sNo={idx + 1}
+                                        sNo={idx + 1 + startIndex}
                                     />
                                 )
                             })
