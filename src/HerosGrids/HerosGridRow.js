@@ -4,12 +4,16 @@ import GenderCellFormatter from "../heroGridCellFormatters/GenderCellFormatter";
 import ColorCellFormatter from "../heroGridCellFormatters/ColorCellFormatter";
 
 export default function HerosGridRow(props) {
-    const { row } = props
+    const { row, Sno } = props
     return (
         <tr>
             {
                 columns.map(columnName => {
                     let content = row[columnName]
+
+                    if (columnName === "Sno") {
+                        content = Sno + 1
+                    }
 
                     if (columnName === "Alignment") {
                         content = <AlignmentCellFormatter data={content} />
